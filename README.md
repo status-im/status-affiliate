@@ -1,1 +1,1 @@
-# status-affilate
+# Status affiliate
