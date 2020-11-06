@@ -13,6 +13,10 @@ button:focus,
     color: white;
 }
 
+.cta-hover:hover {
+    text-decoration: underline;
+}
+
 .accept-tnc {
     color: white;
     display: inline-block;

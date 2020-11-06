@@ -120,13 +120,13 @@ const FormTemplate = () => {
                         />
                           <p className="mt-6 mb-2 accept-tnc">Accept Terms & Conditions</p>
 
-                        <button className="see-tnc">See Terms & Conditions</button>
+                        <button className="see-tnc cta-hover">See Terms & Conditions</button>
                         
                         <p className="text-sm text-gray-400 mt-3">
-                          By clicking Accept Terms & Conditions you agree to 
-                          <a className="a-links" href="#"> Status' Terms of Service</a>, 
-                          the<a className="a-links" href="#"> Affiliate Program Terms of Service</a>, 
-                          and the <a className="a-links" href="#">Privacy Policy</a>.
+                          By clicking Accept Terms & Conditions you agree to {' '}
+                          <a className="a-links cta-hover" href="#">Status' Terms of Service</a>, 
+                          the <a className="a-links cta-hover" href="#">Affiliate Program Terms of Service</a>, 
+                          and the <a className="a-links cta-hover" href="#">Privacy Policy</a>.
                         </p>
 
                         <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow mt-12">Submit</button>
