@@ -66,7 +66,7 @@ const FormTemplate = () => {
                       lastName: '',
                       email: '',
                       emailConfirm: '',
-                      agreed: null,
+                      agreed: [],
                     }}
                     onSubmit={async (values) => {
                       if (values.agreed[0] === 'checked') {
@@ -84,7 +84,7 @@ const FormTemplate = () => {
                     }}
                     validate={validate}
                   >
-                    {({ errors, touched, isValidating }) => (
+                    {({ errors, touched, values }) => (
                       <Form>
                         {/* <label htmlFor="firstName">First Name</label> */}
                         <Field 
@@ -140,8 +140,12 @@ const FormTemplate = () => {
                           the <a className="a-links cta-hover" href="#">Affiliate Program Terms of Service</a>, 
                           and the <a className="a-links cta-hover" href="#">Privacy Policy</a>.
                         </p>
-
-                        <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow mt-12">Submit</button>
+                        {console.log(values.agreed)}
+                        {values.agreed.length ? (
+                          <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow mt-12">Submit</button>
+                        ) : (
+                          <button type="submit" disabled className="btn text-white bg-gray-600 not-allowed shadow mt-12">Submit</button>
+                        )}      
                       </Form>
                     )}
                   </Formik>

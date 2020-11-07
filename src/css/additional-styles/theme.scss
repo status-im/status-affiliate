@@ -30,6 +30,10 @@ button:focus,
     margin-left: 20px;
 }
 
+.not-allowed:hover {
+    cursor: not-allowed;
+}
+
 // Hamburger button
 .hamburger {
 
