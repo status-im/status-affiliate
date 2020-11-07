@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Formik, Field, Form } from 'formik';
+import { postResponse } from '../utils/api';
 
 const FormTemplate = () => {
 
@@ -64,11 +65,17 @@ const FormTemplate = () => {
                       lastName: '',
                       email: '',
                       emailConfirm: '',
-                      checked: null,
+                      agreed: null,
                     }}
                     onSubmit={values => {
                       // same shape as initial values
                       console.log(values);
+                      if (values.agreed[0] === 'checked') {
+                        values.agreed = true;
+                      } else {
+                        alert('Please check')
+                      }
+                      postResponse(values)
                     }}
                     validate={validate}
                   >
@@ -114,9 +121,9 @@ const FormTemplate = () => {
                       
                         <Field 
                           type="checkbox" 
-                          name="checked"
+                          name="agreed"
                           className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" 
-                          value="Agreed"
+                          value="checked"
                         />
                           <p className="mt-6 mb-2 accept-tnc">Accept Terms & Conditions</p>
 
