@@ -3,6 +3,15 @@ import { Formik, Field, Form } from 'formik';
 import { postResponse } from '../utils/api';
 import { useHistory } from "react-router-dom";
 
+const isFilledOut = (values) => {
+  if(!values.firstName.length || !values.lastName.length || !values.email.length === 0 
+    || !values.agreed.length || values.email !== values.emailConfirm) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 const FormTemplate = () => {
   const history = useHistory();
   const validate = (values) => {
@@ -24,6 +33,7 @@ const FormTemplate = () => {
     if (values.emailConfirm !== '' && values.email !== values.emailConfirm) {
       errors.emailConfirm = 'Please confirm your email address';
     }
+
     return errors;
   }
 
@@ -140,8 +150,7 @@ const FormTemplate = () => {
                           the <a className="a-links cta-hover" href="#">Affiliate Program Terms of Service</a>, 
                           and the <a className="a-links cta-hover" href="#">Privacy Policy</a>.
                         </p>
-                        {console.log(values.agreed)}
-                        {values.agreed.length ? (
+                        {isFilledOut(values) ? (
                           <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow mt-12">Submit</button>
                         ) : (
                           <button type="submit" disabled className="btn text-white bg-gray-600 not-allowed shadow mt-12">Submit</button>
