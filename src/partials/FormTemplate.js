@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import { postResponse } from '../utils/api';
+import { useHistory } from "react-router-dom";
 
 const FormTemplate = () => {
-
+  const history = useHistory();
   const validate = (values) => {
     const errors = {};
     if (values.firstName !== '' && !values.firstName) {
@@ -67,15 +68,19 @@ const FormTemplate = () => {
                       emailConfirm: '',
                       agreed: null,
                     }}
-                    onSubmit={values => {
-                      // same shape as initial values
-                      console.log(values);
+                    onSubmit={async (values) => {
                       if (values.agreed[0] === 'checked') {
                         values.agreed = true;
                       } else {
                         alert('Please check')
                       }
-                      postResponse(values)
+                      const response = await postResponse(values);
+                      if (response) {
+                        console.log(response)
+                        history.push('/thankyou')
+                      } else {
+                        alert('Something went wrong with the API')
+                      }
                     }}
                     validate={validate}
                   >

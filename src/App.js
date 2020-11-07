@@ -11,6 +11,7 @@ import AOS from 'aos';
 import { focusHandling } from 'cruip-js-toolkit';
 
 import Home from './pages/Home';
+import Thankyou from './pages/Thankyou';
 
 function App() {
 
@@ -37,6 +38,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/thankyou">
+          <Thankyou />
         </Route>
       </Switch>
     </>
