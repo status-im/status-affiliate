@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "responses",
+  "info": {
+    "name": "response"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "agreed": {
+      "type": "boolean"
+    }
+  }
+}
