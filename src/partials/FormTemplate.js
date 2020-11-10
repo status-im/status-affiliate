@@ -62,8 +62,7 @@ const FormTemplate = () => {
 
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
-                <h3 className="h3 text-white mb-2">Something</h3>
-                <p className="text-gray-300 text-lg mb-6">Something</p>
+                <h4 className="h3 text-white mb-6">YOUR INFORMATION</h4>
 
                 {/* CTA form */}
                 <div className="w-full lg:w-auto">
@@ -148,7 +147,7 @@ const FormTemplate = () => {
                           By clicking Accept Terms & Conditions you agree to {' '}
                           <a className="a-links cta-hover" href="#">Status' Terms of Service</a>, 
                           the <a className="a-links cta-hover" href="#">Affiliate Program Terms of Service</a>, 
-                          and the <a className="a-links cta-hover" href="#">Privacy Policy</a>.
+                          and the <a className="a-links cta-hover" href="https://status.im/privacy-policy/">Privacy Policy</a>.
                         </p>
                         {isFilledOut(values) ? (
                           <button type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 shadow mt-12">Submit</button>
