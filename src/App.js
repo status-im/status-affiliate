@@ -12,6 +12,8 @@ import { focusHandling } from 'cruip-js-toolkit';
 
 import Home from './pages/Home';
 import Thankyou from './pages/Thankyou';
+import AffiliateTerms from './pages/AffiliateTerms';
+import StatusTerms from './pages/StatusTerms';
 
 function App() {
 
@@ -41,6 +43,12 @@ function App() {
         </Route>
         <Route path="/thankyou">
           <Thankyou />
+        </Route>
+        <Route path="/affiliate-terms">
+          <AffiliateTerms />
+        </Route>
+        <Route path="/status-terms">
+          <StatusTerms />
         </Route>
       </Switch>
     </>

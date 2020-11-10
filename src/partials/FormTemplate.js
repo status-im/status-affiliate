@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import { postResponse } from '../utils/api';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const isFilledOut = (values) => {
   if(!values.firstName.length || !values.lastName.length || !values.email.length === 0 
@@ -61,8 +62,8 @@ const FormTemplate = () => {
             <div className="relative flex flex-col lg:flex-row justify-between items-center" style={{ justifyContent: 'center' }}>
 
               {/* CTA content */}
-              <div className="text-center lg:text-left lg:max-w-xl">
-                <h4 className="h3 text-white mb-6">YOUR INFORMATION</h4>
+              <div className="lg:text-left lg:max-w-xl">
+                <h4 className="h3 text-center text-white mb-10">YOUR INFORMATION</h4>
 
                 {/* CTA form */}
                 <div className="w-full lg:w-auto">
@@ -141,12 +142,12 @@ const FormTemplate = () => {
                         />
                           <p className="mt-6 mb-2 accept-tnc">Accept Terms & Conditions</p>
 
-                        <button className="see-tnc cta-hover">See Terms & Conditions</button>
+                        <Link className="see-tnc cta-hover" to="/status-terms">See Terms & Conditions</Link>
                         
-                        <p className="text-sm text-gray-400 mt-3">
+                        <p className="text-sm text-gray-400 mt-6">
                           By clicking Accept Terms & Conditions you agree to {' '}
-                          <a className="a-links cta-hover" href="#">Status' Terms of Service</a>, 
-                          the <a className="a-links cta-hover" href="#">Affiliate Program Terms of Service</a>, 
+                          <Link className="a-links cta-hover" to="/status-terms">Status' Terms of Service</Link>, 
+                          the <Link className="a-links cta-hover" to="/affiliate-terms">Affiliate Program Terms of Service</Link>, 
                           and the <a className="a-links cta-hover" href="https://status.im/privacy-policy/">Privacy Policy</a>.
                         </p>
                         {isFilledOut(values) ? (
