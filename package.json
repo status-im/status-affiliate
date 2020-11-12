@@ -26,8 +26,6 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "deploy": "gh-pages -d build",
-    "deploy:ci": "node bin/gh-pages.js",
     "test": "craco test",
     "eject": "craco eject"
   },

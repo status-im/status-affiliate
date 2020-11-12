@@ -2,25 +2,28 @@
 
 Status affilate T&C agreement landing page.
 
-Development
+Consists of a React frontend and a [StrAPI](https://github.com/strapi/strapi) backend.
+
+The Strapi backend is for form submssion REST API and uses PostgresSQL database.
+
+## Configuration
+
+You can see an example `.env` file in [`.env.example`](./env.example). Copy it to `.env` and edit.
+
+Make sure to set `BASE_URL` as it will be used to post the form data to the backend.
+
+## Development
+
+### Frontend
+
 ```
 yarn install
 yarn start
 ```
 
-Production
-```
-yarn install
-yarn run build
-yarn run deploy
-```
-
-## REST API URL
+### Backend
 
 ```
-# src/utils/api.js
-
-axios.defaults.baseURL = 'http://localhost:1337';
+docker-compose up --build
 ```
-
-Replace `'http://localhost:1337'` with the backend HOST or DNS. It's gonna be used for `http://{HOSTorDNS}/responses`(POST).
+This command will create a `db` folder in the root directory.
