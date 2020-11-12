@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:1337';
+axios.defaults.baseURL = process.env.PUBLIC_URL || 'http://localhost:1337';
 
 export const postResponse = async (request) => {
     let success = null;
